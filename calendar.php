@@ -58,7 +58,7 @@
 	for ($i = 0; $i < 6; $i++) {
 		echo "<div class='week'>";
 		for ($j = 0; $j < 7; $j++) {
-			if ($dayPointer > $monthNum) {
+			if ($dayPointer > $monthNum - 1) {
 				break;
 			}
 			$restClass = '';
@@ -71,7 +71,8 @@
 				$dayPointer++;	
 				continue;
 			}
-			echo "<span class='day$restClass'><span class='text'>{$dayPointer}日</span></span>";
+			$day = $dayPointer + 1;
+			echo "<span class='day$restClass'><span class='text'>{$day}日</span></span>";
 			
 			$dayPointer++;	
 
